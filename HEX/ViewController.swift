@@ -28,56 +28,16 @@ class ViewController: UIViewController {
     @IBOutlet weak var eButton: UIButton!
     @IBOutlet weak var fButton: UIButton!
     @IBOutlet weak var display: UILabel!
-    var previousValue: String!
-    var currentValue: String!
+    var previousValue: String?
+    var currentValue: String?
     var currentAction: Action!
     var currentState: State!
     
-    func addBorders() {
-        self.aButton.layer.borderWidth = 0.1
-        self.bButton.layer.borderWidth = 0.1
-        self.cButton.layer.borderWidth = 0.1
-        self.dButton.layer.borderWidth = 0.1
-        self.eButton.layer.borderWidth = 0.1
-        self.fButton.layer.borderWidth = 0.1
-        self.oneButton.layer.borderWidth = 0.1
-        self.twoButton.layer.borderWidth = 0.1
-        self.threeButton.layer.borderWidth = 0.1
-        self.fourButton.layer.borderWidth = 0.1
-        self.fiveButton.layer.borderWidth = 0.1
-        self.sixButton.layer.borderWidth = 0.1
-        self.sevenButton.layer.borderWidth = 0.1
-        self.eightButton.layer.borderWidth = 0.1
-        self.nineButton.layer.borderWidth = 0.1
-        
-    }
-    /*
-    func roundButtons() {
-        let radiusValue: CGFloat = 0.15 * self.oneButton.bounds.size.width
-        //self.oneButton.layer.cornerRadius =  radiusValue
-        self.oneButton.bounds.size.width = self.oneButton.bounds.size.width*0.9
-        self.oneButton.bounds.size.width = self.oneButton.bounds.size.height*0.9
-        self.twoButton.layer.cornerRadius =  radiusValue
-        self.threeButton.layer.cornerRadius =  radiusValue
-        self.fourButton.layer.cornerRadius =  radiusValue
-        self.fiveButton.layer.cornerRadius =  radiusValue
-        self.sixButton.layer.cornerRadius =  radiusValue
-        self.sevenButton.layer.cornerRadius =  radiusValue
-        self.eightButton.layer.cornerRadius =  radiusValue
-        self.nineButton.layer.cornerRadius =  radiusValue
-        self.aButton.layer.cornerRadius =  radiusValue
-        self.bButton.layer.cornerRadius =  radiusValue
-        self.cButton.layer.cornerRadius =  radiusValue
-        self.dButton.layer.cornerRadius =  radiusValue
-        self.eButton.layer.cornerRadius =  radiusValue
-        self.fButton.layer.cornerRadius =  radiusValue
-    }
- */
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.currentState = .DEC
-        addBorders()
+        self.display.text = ""
     }
     
     @IBAction func zeroWasPressed(_ sender: Any) {
@@ -192,78 +152,112 @@ class ViewController: UIViewController {
         self.currentValue = display.text
         switch self.currentAction {
         case .add:
-            display.text = addValues(value_one: self.previousValue, value_two: self.currentValue)
+            display.text = ""
         default:
             display.text = "Error"
         }
     }
     
+    //number is DEC "12345"
+    //convert DEC to -> HEX OCT BIN
+    
     @IBAction func HEXWasPressed(_ sender: Any) {
-        if !(display.text?.isEmpty)! {
-            let toConvert: String? = display.text
-            let number: Int? = Int(toConvert!, radix: 16)
-            switch self.currentState {
-            case .DEC:
-                display.text = "\(String(describing: number))"
-            case .OCT:
-                display.text = String(number!, radix: 8)
-            case .BIN:
-                display.text = String(number!, radix: 2)
-            default:
-                display.text = toConvert
+        let input: String = display.text!
+        switch self.currentState {
+        case .DEC:
+            if let value = Int(input) {
+                display.text = String(value, radix: 16, uppercase: true)
+                self.currentState = .HEX
             }
+        case .OCT:
+            if let value = Int(input, radix: 8) {
+                display.text = String(value, radix: 16, uppercase: true)
+                self.currentState = .HEX
+            }
+        case .BIN:
+            if let value = Int(input, radix: 2) {
+                display.text = String(value, radix: 16, uppercase: true)
+                self.currentState = .HEX
+            }
+        case .HEX:
+            self.currentState = .HEX
+        default:
+            display.text = "ERROR"
         }
-        self.currentState = .HEX  
     }
     @IBAction func DECWasPressed(_ sender: Any) {
-        if !(display.text?.isEmpty)! {
-            let number: Int? = Int(display.text!)
-            switch self.currentState {
-            case .HEX:
-                display.text = String(number!, radix: 16)
-            case .OCT:
-                display.text = String(number!, radix: 8)
-            case .BIN:
-                display.text = String(number!, radix: 2)
-            default:
-                display.text = "\(String(describing: number))"
+        let input: String = display.text!
+        switch self.currentState {
+        case .HEX:
+            if let value = Int(input, radix: 16) {
+                display.text = "\(value)"
+                self.currentState = .DEC
             }
+        case .OCT:
+            if let value = Int(input, radix: 8) {
+                display.text = "\(value)"
+                self.currentState = .DEC
+            }
+        case .BIN:
+            if let value = Int(input, radix: 2) {
+                display.text = "\(value)"
+                self.currentState = .DEC
+            }
+        case .DEC:
+            self.currentState = .DEC
+        default:
+            display.text = "ERROR"
         }
-        self.currentState = .DEC
+    
     }
+    
     @IBAction func OCTWasPressed(_ sender: Any) {
-        if !(display.text?.isEmpty)! {
-            let toConvert: String? = display.text
-            let number: Int?  = Int(toConvert!, radix: 8)
-            switch self.currentState {
-            case .HEX:
-                display.text = String(number!, radix: 16)
-            case .DEC:
-                display.text = "\(String(describing: number))"
-            case .BIN:
-                display.text = String(number!, radix: 2)
-            default:
-                display.text = toConvert
+        let input: String = display.text!
+        switch self.currentState {
+        case .HEX:
+            if let value = Int(input, radix: 16) {
+                display.text = String(value, radix: 8)
+                self.currentState = .OCT
             }
+        case .DEC:
+            if let value = Int(input) {
+                display.text = String(value, radix: 8)
+                self.currentState = .OCT
+            }
+        case .BIN:
+            if let value = Int(input, radix: 2) {
+                display.text = String(value, radix: 8)
+                self.currentState = .OCT
+            }
+        case .OCT:
+            self.currentState = .OCT
+        default:
+            display.text = "ERROR"
         }
-        self.currentState = .OCT
     }
     @IBAction func BINWasPressed(_ sender: Any) {
-        if !(display.text?.isEmpty)! {
-            let toConvert: String? = display.text
-            let number: Int?  = Int(toConvert!, radix: 2)
-            switch self.currentState {
-            case .HEX:
-                display.text = String(number!, radix: 16)
-            case .DEC:
-                display.text = "\(String(describing: number))"
-            case .OCT:
-                display.text = String(number!, radix: 8)
-            default:
-                display.text = toConvert
+        let input: String = display.text!
+        switch self.currentState {
+        case .HEX:
+            if let value = Int(input, radix: 16) {
+                display.text = String(value, radix: 2)
+                self.currentState = .BIN
             }
+        case .DEC:
+            if let value = Int(input) {
+                display.text = String(value, radix: 2)
+                self.currentState = .BIN
+            }
+        case .OCT:
+            if let value = Int(input, radix: 8) {
+                display.text = String(value, radix: 2)
+                self.currentState = .BIN
+            }
+        case .BIN:
+            self.currentState = .BIN
+        default:
+            display.text = "ERROR"
         }
-        self.currentState = .BIN
     }
     func addValues(value_one: String, value_two: String) -> String {
         switch self.currentState {
