@@ -36,23 +36,24 @@ class ViewController: UIViewController {
     
     //ABADAE
     override func viewDidLoad() {
+        let buttonIsDiabledColor: UIColor = #colorLiteral(red: 0.6546062231, green: 0.6627456546, blue: 0.6668370962, alpha: 1)
         super.viewDidLoad()
         self.numberState = .DEC
         self.display.text = "0"
-        twoButton.setTitleColor(#colorLiteral(red: 0.6546062231, green: 0.6627456546, blue: 0.6668370962, alpha: 1), for: .disabled)
-        threeButton.setTitleColor(#colorLiteral(red: 0.6546062231, green: 0.6627456546, blue: 0.6668370962, alpha: 1), for: .disabled)
-        fourButton.setTitleColor(#colorLiteral(red: 0.6546062231, green: 0.6627456546, blue: 0.6668370962, alpha: 1), for: .disabled)
-        fiveButton.setTitleColor(#colorLiteral(red: 0.6546062231, green: 0.6627456546, blue: 0.6668370962, alpha: 1), for: .disabled)
-        sixButton.setTitleColor(#colorLiteral(red: 0.6546062231, green: 0.6627456546, blue: 0.6668370962, alpha: 1), for: .disabled)
-        sevenButton.setTitleColor(#colorLiteral(red: 0.6546062231, green: 0.6627456546, blue: 0.6668370962, alpha: 1), for: .disabled)
-        eightButton.setTitleColor(#colorLiteral(red: 0.6546062231, green: 0.6627456546, blue: 0.6668370962, alpha: 1), for: .disabled)
-        nineButton.setTitleColor(#colorLiteral(red: 0.6546062231, green: 0.6627456546, blue: 0.6668370962, alpha: 1), for: .disabled)
-        aButton.setTitleColor(#colorLiteral(red: 0.6546062231, green: 0.6627456546, blue: 0.6668370962, alpha: 1), for: .disabled)
-        bButton.setTitleColor(#colorLiteral(red: 0.6546062231, green: 0.6627456546, blue: 0.6668370962, alpha: 1), for: .disabled)
-        cButton.setTitleColor(#colorLiteral(red: 0.6546062231, green: 0.6627456546, blue: 0.6668370962, alpha: 1), for: .disabled)
-        dButton.setTitleColor(#colorLiteral(red: 0.6546062231, green: 0.6627456546, blue: 0.6668370962, alpha: 1), for: .disabled)
-        eButton.setTitleColor(#colorLiteral(red: 0.6546062231, green: 0.6627456546, blue: 0.6668370962, alpha: 1), for: .disabled)
-        fButton.setTitleColor(#colorLiteral(red: 0.6546062231, green: 0.6627456546, blue: 0.6668370962, alpha: 1), for: .disabled)
+        twoButton.setTitleColor(buttonIsDiabledColor, for: .disabled)
+        threeButton.setTitleColor(buttonIsDiabledColor, for: .disabled)
+        fourButton.setTitleColor(buttonIsDiabledColor, for: .disabled)
+        fiveButton.setTitleColor(buttonIsDiabledColor, for: .disabled)
+        sixButton.setTitleColor(buttonIsDiabledColor, for: .disabled)
+        sevenButton.setTitleColor(buttonIsDiabledColor, for: .disabled)
+        eightButton.setTitleColor(buttonIsDiabledColor, for: .disabled)
+        nineButton.setTitleColor(buttonIsDiabledColor, for: .disabled)
+        aButton.setTitleColor(buttonIsDiabledColor, for: .disabled)
+        bButton.setTitleColor(buttonIsDiabledColor, for: .disabled)
+        cButton.setTitleColor(buttonIsDiabledColor, for: .disabled)
+        dButton.setTitleColor(buttonIsDiabledColor, for: .disabled)
+        eButton.setTitleColor(buttonIsDiabledColor, for: .disabled)
+        fButton.setTitleColor(buttonIsDiabledColor, for: .disabled)
         disableForDecimal()
     }
     
