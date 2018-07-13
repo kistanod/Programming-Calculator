@@ -12,6 +12,7 @@ class ViewController: UIViewController {
     
     
     
+    @IBOutlet weak var zeroButton: UIButton!
     @IBOutlet weak var oneButton: UIButton!
     @IBOutlet weak var twoButton: UIButton!
     @IBOutlet weak var threeButton: UIButton!
@@ -31,13 +32,28 @@ class ViewController: UIViewController {
     var previousValue: String?
     var currentValue: String?
     var currentAction: Action!
-    var currentState: State!
+    var numberState: State!
     
-
+    //ABADAE
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.currentState = .DEC
-        self.display.text = ""
+        self.numberState = .DEC
+        self.display.text = "0"
+        twoButton.setTitleColor(#colorLiteral(red: 0.6546062231, green: 0.6627456546, blue: 0.6668370962, alpha: 1), for: .disabled)
+        threeButton.setTitleColor(#colorLiteral(red: 0.6546062231, green: 0.6627456546, blue: 0.6668370962, alpha: 1), for: .disabled)
+        fourButton.setTitleColor(#colorLiteral(red: 0.6546062231, green: 0.6627456546, blue: 0.6668370962, alpha: 1), for: .disabled)
+        fiveButton.setTitleColor(#colorLiteral(red: 0.6546062231, green: 0.6627456546, blue: 0.6668370962, alpha: 1), for: .disabled)
+        sixButton.setTitleColor(#colorLiteral(red: 0.6546062231, green: 0.6627456546, blue: 0.6668370962, alpha: 1), for: .disabled)
+        sevenButton.setTitleColor(#colorLiteral(red: 0.6546062231, green: 0.6627456546, blue: 0.6668370962, alpha: 1), for: .disabled)
+        eightButton.setTitleColor(#colorLiteral(red: 0.6546062231, green: 0.6627456546, blue: 0.6668370962, alpha: 1), for: .disabled)
+        nineButton.setTitleColor(#colorLiteral(red: 0.6546062231, green: 0.6627456546, blue: 0.6668370962, alpha: 1), for: .disabled)
+        aButton.setTitleColor(#colorLiteral(red: 0.6546062231, green: 0.6627456546, blue: 0.6668370962, alpha: 1), for: .disabled)
+        bButton.setTitleColor(#colorLiteral(red: 0.6546062231, green: 0.6627456546, blue: 0.6668370962, alpha: 1), for: .disabled)
+        cButton.setTitleColor(#colorLiteral(red: 0.6546062231, green: 0.6627456546, blue: 0.6668370962, alpha: 1), for: .disabled)
+        dButton.setTitleColor(#colorLiteral(red: 0.6546062231, green: 0.6627456546, blue: 0.6668370962, alpha: 1), for: .disabled)
+        eButton.setTitleColor(#colorLiteral(red: 0.6546062231, green: 0.6627456546, blue: 0.6668370962, alpha: 1), for: .disabled)
+        fButton.setTitleColor(#colorLiteral(red: 0.6546062231, green: 0.6627456546, blue: 0.6668370962, alpha: 1), for: .disabled)
+        disableForDecimal()
     }
     
     @IBAction func zeroWasPressed(_ sender: Any) {
@@ -47,66 +63,151 @@ class ViewController: UIViewController {
     }
     
     @IBAction func oneWasPressed(_ sender: Any) {
-        display.text?.append("1")
+        if display.text == "0" {
+            display.text = ""
+            display.text?.append("1")
+        } else {
+            display.text?.append("1")
+        }
     }
     
     @IBAction func twoWasPressed(_ sender: Any) {
-        display.text?.append("2")
+        if display.text == "0" {
+            display.text = ""
+            display.text?.append("2")
+        } else {
+            display.text?.append("2")
+        }
     }
     
     @IBAction func threeWasPressed(_ sender: Any) {
-        display.text?.append("3")
+        if display.text == "0" {
+            display.text = ""
+            display.text?.append("3")
+        } else {
+            display.text?.append("3")
+        }
     }
     
     @IBAction func fourWasPressed(_ sender: Any) {
-        display.text?.append("4")
+        if display.text == "0" {
+            display.text = ""
+            display.text?.append("4")
+        } else {
+            display.text?.append("4")
+        }
     }
     
     @IBAction func fiveWasPressed(_ sender: Any) {
-        display.text?.append("5")
+        if display.text == "0" {
+            display.text = ""
+            display.text?.append("5")
+        } else {
+            display.text?.append("5")
+        }
     }
     
     @IBAction func sixWasPressed(_ sender: Any) {
-        display.text?.append("6")
+        if display.text == "0" {
+            display.text = ""
+            display.text?.append("6")
+        } else {
+            display.text?.append("6")
+        }
     }
     
     @IBAction func sevenWasPressed(_ sender: Any) {
-        display.text?.append("7")
+        if display.text == "0" {
+            display.text = ""
+            display.text?.append("7")
+        } else {
+            display.text?.append("7")
+        }
     }
     
     @IBAction func eightWasPressed(_ sender: Any) {
-        display.text?.append("8")
+        if display.text == "0" {
+            display.text = ""
+            display.text?.append("8")
+        } else {
+            display.text?.append("8")
+        }
     }
     @IBAction func nineWasPressed(_ sender: Any) {
-        display.text?.append("9")
+        if display.text == "0" {
+            display.text = ""
+            display.text?.append("9")
+        } else {
+            display.text?.append("9")
+        }
     }
     @IBAction func aWasPressed(_ sender: Any) {
-        display.text?.append("A")
+        if display.text == "0" {
+            display.text = ""
+            display.text?.append("A")
+        } else {
+            display.text?.append("A")
+        }
     }
     
     @IBAction func bWasPressed(_ sender: Any) {
-        display.text?.append("B")
+        if display.text == "0" {
+            display.text = ""
+            display.text?.append("B")
+        } else {
+            display.text?.append("B")
+        }
     }
     @IBAction func cWasPressed(_ sender: Any) {
-        display.text?.append("C")
+        if display.text == "0" {
+            display.text = ""
+            display.text?.append("C")
+        } else {
+            display.text?.append("C")
+        }
         
     }
     @IBAction func dWasPressed(_ sender: Any) {
-        display.text?.append("D")
+        if display.text == "0" {
+            display.text = ""
+            display.text?.append("D")
+        } else {
+            display.text?.append("D")
+        }
         
     }
     @IBAction func eWasPressed(_ sender: Any) {
-        display.text?.append("E")
+        if display.text == "0" {
+            display.text = ""
+            display.text?.append("E")
+        } else {
+            display.text?.append("E")
+        }
         
     }
     @IBAction func fWasPressed(_ sender: Any) {
-        display.text?.append("F")
+        if display.text == "0" {
+            display.text = ""
+            display.text?.append("F")
+        } else {
+            display.text?.append("F")
+        }
         
     }
     @IBAction func cancelWasPressed(_ sender: Any) {
-        display.text = ""
+        display.text = "0"
     }
     
+    @IBAction func deleteWasPressed(_ sender: Any) {
+        if var input: String = display.text {
+            if input.count > 1 {
+                input.removeLast()
+                display.text = input
+            } else {
+                display.text = "0"
+            }
+        }
+    }
     @IBAction func divideWasPressed(_ sender: Any) {
         self.previousValue = display.text
         self.currentAction = .divide
@@ -158,53 +259,58 @@ class ViewController: UIViewController {
         }
     }
     
-    //number is DEC "12345"
-    //convert DEC to -> HEX OCT BIN
+
     
     @IBAction func HEXWasPressed(_ sender: Any) {
         let input: String = display.text!
-        switch self.currentState {
+        switch self.numberState {
         case .DEC:
             if let value = Int(input) {
                 display.text = String(value, radix: 16, uppercase: true)
-                self.currentState = .HEX
+                self.numberState = .HEX
+                enableAll()
             }
         case .OCT:
             if let value = Int(input, radix: 8) {
                 display.text = String(value, radix: 16, uppercase: true)
-                self.currentState = .HEX
+                self.numberState = .HEX
+                enableAll()
             }
         case .BIN:
             if let value = Int(input, radix: 2) {
                 display.text = String(value, radix: 16, uppercase: true)
-                self.currentState = .HEX
+                self.numberState = .HEX
+                enableAll()
             }
         case .HEX:
-            self.currentState = .HEX
+            self.numberState = .HEX
         default:
             display.text = "ERROR"
         }
     }
     @IBAction func DECWasPressed(_ sender: Any) {
         let input: String = display.text!
-        switch self.currentState {
+        switch self.numberState {
         case .HEX:
             if let value = Int(input, radix: 16) {
                 display.text = "\(value)"
-                self.currentState = .DEC
+                self.numberState = .DEC
+                disableForDecimal()
             }
         case .OCT:
             if let value = Int(input, radix: 8) {
                 display.text = "\(value)"
-                self.currentState = .DEC
+                self.numberState = .DEC
+                disableForDecimal()
             }
         case .BIN:
             if let value = Int(input, radix: 2) {
                 display.text = "\(value)"
-                self.currentState = .DEC
+                self.numberState = .DEC
+                disableForDecimal()
             }
         case .DEC:
-            self.currentState = .DEC
+            self.numberState = .DEC
         default:
             display.text = "ERROR"
         }
@@ -213,54 +319,60 @@ class ViewController: UIViewController {
     
     @IBAction func OCTWasPressed(_ sender: Any) {
         let input: String = display.text!
-        switch self.currentState {
+        switch self.numberState {
         case .HEX:
             if let value = Int(input, radix: 16) {
                 display.text = String(value, radix: 8)
-                self.currentState = .OCT
+                self.numberState = .OCT
+                disableForOctal()
             }
         case .DEC:
             if let value = Int(input) {
                 display.text = String(value, radix: 8)
-                self.currentState = .OCT
+                self.numberState = .OCT
+                disableForOctal()
             }
         case .BIN:
             if let value = Int(input, radix: 2) {
                 display.text = String(value, radix: 8)
-                self.currentState = .OCT
+                self.numberState = .OCT
+                disableForOctal()
             }
         case .OCT:
-            self.currentState = .OCT
+            self.numberState = .OCT
         default:
             display.text = "ERROR"
         }
     }
     @IBAction func BINWasPressed(_ sender: Any) {
         let input: String = display.text!
-        switch self.currentState {
+        switch self.numberState {
         case .HEX:
             if let value = Int(input, radix: 16) {
                 display.text = String(value, radix: 2)
-                self.currentState = .BIN
+                self.numberState = .BIN
+                disableForBinary()
             }
         case .DEC:
             if let value = Int(input) {
                 display.text = String(value, radix: 2)
-                self.currentState = .BIN
+                self.numberState = .BIN
+                disableForBinary()
             }
         case .OCT:
             if let value = Int(input, radix: 8) {
                 display.text = String(value, radix: 2)
-                self.currentState = .BIN
+                self.numberState = .BIN
+                disableForBinary()
             }
         case .BIN:
-            self.currentState = .BIN
+            self.numberState = .BIN
         default:
             display.text = "ERROR"
         }
     }
     func addValues(value_one: String, value_two: String) -> String {
-        switch self.currentState {
+        switch self.numberState {
         case .DEC:
             return  String((Int(value_one))! + Int(value_two)!).uppercased()
         case .HEX:
@@ -273,80 +385,59 @@ class ViewController: UIViewController {
             return "ERROR"
         }
     }
-    
-    
-    /*
-    func subtractValues(value_one: String, value_two: String) -> String {
-        switch self.currectState {
-        case .DEC:
-        case .HEX:
-        case .OCT:
-        case .BIN:
-        }
+    func enableAll() {
+        twoButton.isEnabled = true
+        threeButton.isEnabled = true
+        fourButton.isEnabled = true
+        fiveButton.isEnabled = true
+        sixButton.isEnabled = true
+        sevenButton.isEnabled = true
+        eightButton.isEnabled = true
+        nineButton.isEnabled = true
+        aButton.isEnabled = true
+        bButton.isEnabled = true
+        cButton.isEnabled = true
+        dButton.isEnabled = true
+        eButton.isEnabled = true
+        fButton.isEnabled = true
     }
-    func divideValues(value_one: String, value_two: String) -> String {
-        switch self.currectState {
-        case .DEC:
-        case .HEX:
-        case .OCT:
-        case .BIN:
-        }
+    func disableForDecimal() {
+        enableAll()
+        aButton.isEnabled = false
+        bButton.isEnabled = false
+        cButton.isEnabled = false
+        dButton.isEnabled = false
+        eButton.isEnabled = false
+        fButton.isEnabled = false
     }
-    func multiplyValues(value_one: String, value_two: String) -> String {
-        switch self.currectState {
-        case .DEC:
-        case .HEX:
-        case .OCT:
-        case .BIN:
-        }
+    func disableForOctal() {
+        enableAll()
+        eightButton.isEnabled = false
+        nineButton.isEnabled = false
+        aButton.isEnabled = false
+        bButton.isEnabled = false
+        cButton.isEnabled = false
+        dButton.isEnabled = false
+        eButton.isEnabled = false
+        fButton.isEnabled = false
     }
-    func XORValues(value_one: String, value_two: String) -> String {
-        switch self.currectState {
-        case .DEC:
-        case .HEX:
-        case .OCT:
-        case .BIN:
-        }
+    func disableForBinary() {
+        enableAll()
+        twoButton.isEnabled = false
+        threeButton.isEnabled = false
+        fourButton.isEnabled = false
+        fiveButton.isEnabled = false
+        sixButton.isEnabled = false
+        sevenButton.isEnabled = false
+        eightButton.isEnabled = false
+        nineButton.isEnabled = false
+        aButton.isEnabled = false
+        bButton.isEnabled = false
+        cButton.isEnabled = false
+        dButton.isEnabled = false
+        eButton.isEnabled = false
+        fButton.isEnabled = false
     }
-    func MODValues(value_one: String, value_two: String) -> String {
-        switch self.currectState {
-        case .DEC:
-        case .HEX:
-        case .OCT:
-        case .BIN:
-        }
-            
-    }
-    func MODValues(value_one: String, value_two: String) -> String {
-        switch self.currectState {
-        case .DEC:
-        case .HEX:
-        case .OCT:
-        case .BIN:
-        }
-            
-    }
-    func ORValues(value_one: String, value_two: String) -> String {
-        switch self.currectState {
-        case .DEC:
-        case .HEX:
-        case .OCT:
-        case .BIN:
-        }
-        
-    }
-    func ANDValues(value_one: String, value_two: String) -> String {
-        switch self.currectState {
-        case .DEC:
-        case .HEX:
-        case .OCT:
-        case .BIN:
-        }
-    }
- */
-        
-    
-    
 }
 
 enum Action {
