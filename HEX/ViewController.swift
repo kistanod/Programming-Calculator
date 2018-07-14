@@ -331,6 +331,7 @@ class ViewController: UIViewController {
     
     
     @IBAction func divideWasPressed(_ sender: Any) {
+        dehighlightAllActionButtons()
         divideButton.backgroundColor = highlightedColor
         previousValue = display.text
         currentAction = .divide
@@ -339,6 +340,7 @@ class ViewController: UIViewController {
     
     
     @IBAction func mutiplyWasPressed(_ sender: Any) {
+        dehighlightAllActionButtons()
         multiplyButton.backgroundColor = highlightedColor
         previousValue = display.text
         currentAction = .multiply
@@ -348,6 +350,7 @@ class ViewController: UIViewController {
     
     
     @IBAction func addWasPressed(_ sender: Any) {
+        dehighlightAllActionButtons()
         addButton.backgroundColor = highlightedColor
         previousValue = display.text
         currentAction = .add
@@ -356,6 +359,7 @@ class ViewController: UIViewController {
     
     
     @IBAction func subtractWasPressed(_ sender: Any) {
+        dehighlightAllActionButtons()
         subtractButton.backgroundColor = highlightedColor
         previousValue = display.text
         currentAction = .subtract
@@ -364,6 +368,7 @@ class ViewController: UIViewController {
     
     
     @IBAction func XORWasPressed(_ sender: Any) {
+        dehighlightAllActionButtons()
         XORButton.backgroundColor = highlightedColor
         previousValue = display.text
         currentAction = .XOR
@@ -372,6 +377,7 @@ class ViewController: UIViewController {
     
     
     @IBAction func MODWasPressed(_ sender: Any) {
+        dehighlightAllActionButtons()
         MODButton.backgroundColor = highlightedColor
         previousValue = display.text
         currentAction = .MOD
@@ -380,6 +386,7 @@ class ViewController: UIViewController {
     
     
     @IBAction func ORWasPressed(_ sender: Any) {
+        dehighlightAllActionButtons()
         ORButton.backgroundColor = highlightedColor
         previousValue = display.text
         currentAction = .OR
@@ -388,6 +395,7 @@ class ViewController: UIViewController {
     
     
     @IBAction func ANDWasPressed(_ sender: Any) {
+        dehighlightAllActionButtons()
         ANDButton.backgroundColor = highlightedColor
         previousValue = display.text
         currentAction = .AND
