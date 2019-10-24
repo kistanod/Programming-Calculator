@@ -49,6 +49,7 @@ class ViewController: UIViewController {
         numberState = .DEC
         DECStateButton.backgroundColor = highlightedButtonColor
         display.text = "0"
+        firstValue = "0"
         setColorsForTitles()
         DECStateButton.isSelected = true
         disallowInteractionForDecimalState()
@@ -984,4 +985,3 @@ enum State {
     case OCT
     case HEX
 }
-
