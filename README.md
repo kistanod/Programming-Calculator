@@ -1,3 +1,3 @@
-# Programming-Calculator
+# Programming Calculator
 
 An iOS like calculator app with extra functionality like converting to hexadecimal, octal and binary representations of the number. Binary operators included. Written when started to learn swift, therefore has all necessary code is in a single file. This is not good, don't do that kids...
