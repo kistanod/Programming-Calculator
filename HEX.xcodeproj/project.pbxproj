@@ -283,7 +283,7 @@
 		4B9AE5C420F2B30500C2DFB8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3LDK299WHA;
 				INFOPLIST_FILE = HEX/Info.plist;
@@ -301,7 +301,7 @@
 		4B9AE5C520F2B30500C2DFB8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3LDK299WHA;
 				INFOPLIST_FILE = HEX/Info.plist;
