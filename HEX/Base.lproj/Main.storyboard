@@ -424,7 +424,7 @@
                                                         <rect key="frame" x="248.33333333333337" y="0.0" width="83" height="82.666666666666671"/>
                                                         <color key="backgroundColor" red="0.98855572938919067" green="0.58265244960784912" blue="0.0026766473893076181" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="23"/>
-                                                        <state key="normal" title="HEX">
+                                                        <state key="normal" title="NEG">
                                                             <color key="titleColor" red="0.99586588144302368" green="1" blue="0.9999271035194397" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </state>
                                                         <connections>
@@ -438,6 +438,9 @@
                                                         <state key="normal" title="INFO">
                                                             <color key="titleColor" red="0.91748795660000004" green="1" blue="0.97669541250000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </state>
+                                                        <connections>
+                                                            <segue destination="WD3-VE-X5G" kind="show" id="ruO-LC-eG3"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -538,7 +541,47 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
+            <point key="canvasLocation" x="46" y="133"/>
+        </scene>
+        <!--About Page View Controller-->
+        <scene sceneID="D2x-Wt-ZKa">
+            <objects>
+                <viewController id="WD3-VE-X5G" customClass="AboutPageViewController" customModule="HEX" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pyc-9h-GOb">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="github.com/kistanod" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="w1c-kZ-tzd">
+                                <rect key="frame" x="89" y="341" width="243" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="243" id="BLG-WG-QBM"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vJw-xZ-m9F">
+                                <rect key="frame" x="30" y="30" width="34" height="30"/>
+                                <state key="normal" title="Back"/>
+                                <connections>
+                                    <action selector="DismissView:" destination="WD3-VE-X5G" eventType="touchUpInside" id="R06-Kg-iQQ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="vJw-xZ-m9F" firstAttribute="top" secondItem="TSr-zv-PvW" secondAttribute="top" constant="30" id="Qye-Me-YWx"/>
+                            <constraint firstItem="w1c-kZ-tzd" firstAttribute="leading" secondItem="TSr-zv-PvW" secondAttribute="leading" constant="89" id="TV0-fg-nFI"/>
+                            <constraint firstItem="vJw-xZ-m9F" firstAttribute="leading" secondItem="TSr-zv-PvW" secondAttribute="leading" constant="30" id="pyo-mI-xpV"/>
+                            <constraint firstItem="TSr-zv-PvW" firstAttribute="trailing" secondItem="w1c-kZ-tzd" secondAttribute="trailing" constant="82" id="sVw-r8-dNC"/>
+                            <constraint firstItem="TSr-zv-PvW" firstAttribute="bottom" secondItem="w1c-kZ-tzd" secondAttribute="bottom" constant="341" id="wgk-Fn-31m"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="TSr-zv-PvW"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="ubo-k5-PyV"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="C05-XM-gMn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="831.88405797101461" y="132.88043478260872"/>
         </scene>
     </scenes>
 </document>
